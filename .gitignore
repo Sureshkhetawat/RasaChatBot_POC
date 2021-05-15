@@ -1,0 +1,22 @@
+# Ignore the node_modules directory
+env_chatbot/
+
+# Ignore Logs
+logs
+*.log
+
+*.txt
+
+# Ignore DB
+*.db
+
+# Ignore the build directory
+/dist
+
+# The file containing environment variables 
+.env
+
+# Ignore IDE specific files
+.idea/
+.vscode/
+*.sw*

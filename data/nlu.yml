@@ -1,0 +1,267 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: user_name
+  examples: |
+    - hello, my name is [ram](name)
+    - my name is [ram}(name)
+    - hey, my name is [raj](name)
+    - [gopal](name) is my name
+    - [sachin](name) this side
+    - people call me [rohit](name)
+    - myself [hardhik](name)
+    - I am [suresh](name)
+
+- intent: inform
+  examples: |
+    - on [25th july, 2017](date)
+    - from [delhi](origin) to [bangalore](destination) for today(date)
+    - from [mumbai](origin) to [bangalore](destination) for tomorrow(date)
+    - [Mangaluru](location)
+    - [Baharampur](location)
+    - [guwahati](location)
+    - [Karur](location)
+    - [Sahaspur](location)
+    - [Parli](location)
+    - [Chennai](location)
+    - [Khair](location)
+    - [Shahabad](location)
+    - [Karimganj](location)
+    - [jaipur](location)
+    - [Savanur](location)
+    - [Guntakal](location)
+    - [Dhamtari](location)
+    - [Mahidpur](location)
+    - [Mathura](location)
+    - [Puthuppally](location)
+    - [Sainthia](location)
+    - [Kochi](location)
+    - [Safipur](location)
+    - [Jagtial](location)
+    - [Muktsar](location)
+    - [Rahatgarh](location)
+    - [Patiala](location)
+    - [Ahmedabad](location)
+    - [Ratia](location)
+    - [Charkhi Dadri](location)
+    - [Reengus](location)
+    - [Varanasi](location)
+    - [madras](location)
+    - [Sugauli](location)
+    - [tamilnadu](location)
+    - [Sidhpur](location)
+    - [Lalgudi](location)
+    - [Tirukkoyilur](location)
+    - [Sadri](location)
+    - [Kerala](location)
+    - [New Delhi](location)
+    - [Chhapra](location)
+    - [Ramagundam](location)
+    - [Kadapa](location)
+    - [Pali](location)
+    - [Satna](location)
+    - [Vizianagaram](location)
+    - [Katihar](location)
+    - [Hardwar](location)
+    - [Haridwar](location)
+    - [Sonipat](location)
+    - [Nagercoil](location)
+    - [Thanjavur](location)
+    - [Murwara](location)
+    - [Naihati](location)
+    - [Sambhal](location)
+    - [Nadiad](location)
+    - [English Bazar](location)
+    - [Yamunanagar](location)
+    - [Munger](location)
+    - [Eluru](location)
+    - [Panchkula](location)
+    - [Raayachuru](location)
+    - [Panvel](location)
+    - [goa](location)
+    - [on 25 july, 2017](date)
+    - [on 25 july 2017](date)
+    - [25-8-2017](date)
+    - [2017-07-25](date)
+    - [25 september](date)
+    - [25 sept](date)
+    - [tomorrow](date)
+    - [today](date)
+    - [today](date)
+    - [today](date)
+    - [friday](date)
+    - [monday](date)
+    - [next monday](date)
+    - [next friday](date)
+    - [next tuesday](date)
+    - [next mon](date)
+    - [next fri](date)
+    - [next tue](date)
+    - [next thursday](date)
+    - [next sat](date)
+    - [next sun](date)
+    - from [jaipur](origin)
+    - from [mumbai](origin)
+    - to [bangalore](destination)
+    - to [haridwar](destination)
+
+- intent: webcheckin_guidelines
+  examples: |
+    - hey! I want to know in details regarding webcheckin
+    - can you provide me with webcheckin details
+    - Can I know new webcheckin info
+    - Can I know new webcheckin rules
+    - webcheckin information
+    - webcheckin info
+
+- intent: flight_booking_enquiry
+  examples: |
+    - I want to book a [flight](services) from [bangalore](origin) to [delhi](destination) on [30th of september](date)
+    - I want to book a [flight](services)
+    - book a [flight](services)
+    - can you book a [flight](services) for me
+    - book a [flight](services) for me
+    - I want a [flight](services)
+    - [flight](services) from [mumbai](origin) to [delhi](destination) [next tuesday](date)
+    - [flight](services) to [goa](destination) on [sunday](date)
+    - I want a [flight](services) from [delhi](origin) to [kathmandu](destination) on [4 august](date)
+    - book a [flight](services) for [tomorrow](date) from [bangalore](origin)
+    - Book a [flight](services) from [chennai](origin)
+    - I want a [flight](services) from [mumbai](origin) to [dubai](destination)
+    - I want a [flight](services) on [25 august](date)
+    - I want a [flight](services) to [delhi](destination)
+    - I want a [flight](services) to [bangalore](destination)
+    - I want a [flight](services) from [delhi](origin) to [kathmandu](destination) on [4 august](date)
+    - book a [flight](services) for [tomorrow](date) from [bangalore](origin)
+    - Book a [flight](services) from [chennai](origin)
+    - I want a [flight](services) from [mumbai](origin) to [dubai](destination)
+    - I want to book a [flight](services)
+    - book a [flight](services)
+    - can you book a [flight](services) for me
+    - book a [flight](services) for me
+    - I want a [flight](services)
+    - I want a [flight](services) from [delhi](origin) to [kathmandu](destination) on [4 august](date)
+    - book a [flight](services) for [tomorrow](date) from [bangalore](origin)
+    - Book a [flight](services) from [chennai](origin)
+    - I want a [flight](services) from [mumbai](origin) to [dubai](destination)
+    - I want a [flight](services) on [25 august](date)
+    - I want a [flight](services) to [delhi](destination)
+    - I want a [flight](services) to [bangalore](destination)
+    - I want a [flight](services) from [delhi](origin) to [kathmandu](destination) on [4 august](date)
+    - book a [flight](services) for [tomorrow](date) from [bangalore](origin)
+    - Book a [flight](services) from [chennai](origin)
+    - I want a [flight](services) from [mumbai](origin) to [dubai](destination)
+    - i want to book a [flight](services) to [delhi](destination) from [bangalore](origin)
+    - I want a [flight](services) on [25 august](date) for [2](people) people
+    - I want a [flight](services) to [delhi](destination) for [three](people) people
+    - I want a one way [flight](services) from [mumbai](origin) to [dubai](destination)
+    - I want a one way [flight](services) on [25 august](date)
+    - I want a one way [flight](services) to [delhi](destination)
+    - I want a one way [flight](services) to [bangalore](destination)
+    - I want a one way [flight](services) from [delhi](origin) to [kathmandu](destination) on [4 august](date)
+    - book a one way [flight](services) for [tomorrow](date) from [bangalore](origin)
+    - Book a one way [flight](services) from [chennai](origin)
+    - I want a one way [flight](services) from [mumbai](origin) to [dubai](destination)
+    - I want to book a one way [flight](services)
+    - book a one way [flight](services)
+    - can you book a one way [flight](services) for me
+    - I want a oneway [flight](services) from [mumbai](origin) to [dubai](destination)
+    - I want a oneway [flight](services) on [25 august](date)
+    - I want a oneway [flight](services) to [delhi](destination)
+    - I want a oneway [flight](services) to [bangalore](destination)
+    - I want a oneway [flight](services) from [delhi](origin) to [kathmandu](destination) on [4 august](date)
+    - book a oneway [flight](services) for [tomorrow](date) from [bangalore](origin)
+    - Book a oneway [flight](services) from [chennai](origin)
+    - I want a oneway [flight](services) from [mumbai](origin) to [dubai](destination)
+    - I want to book a oneway [flight](services)
+    - book a oneway [flight](services)
+    - can you book a oneway [flight](services) for me
+    - one way flight
+    - one way flight
+    - one way flight
+    - one way flight
+    - one way flight
+
+

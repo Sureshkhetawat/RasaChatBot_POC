@@ -1,0 +1,175 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- mood_great:
+    use_entities: true
+- mood_unhappy:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+- user_name:
+    use_entities: true
+- flight_booking_enquiry:
+    use_entities: true
+- webcheckin_guidelines:
+    use_entities: true
+- inform:
+    use_entities: true
+- inform[date=2017-09-12]:
+    use_entities: true
+- inform[location=bangalore]:
+    use_entities: true
+- inform[location=delhi]:
+    use_entities: true
+- flight_booking_enquiry[services=flight]:
+    use_entities: true
+- flight_booking_enquiry[services=flight, origin=mumbai]:
+    use_entities: true
+- nlu_fallback:
+    use_entities: true
+- request_names:
+    use_entities: true
+entities:
+- name
+- services
+- destination
+- origin
+- people
+- date
+- location
+slots:
+  name:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  services:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  location:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  destination:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: true
+  origin:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: false
+    influence_conversation: true
+  date:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  requested_slot:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: false
+responses:
+  utter_greet:
+  - text: Hello, I am Sculpy, an AI powered assistant. I am here to help you with your flight booking queries.
+  utter_please_rephrase:
+  - text: I didn't understand, can you please rephrase it?
+  utter_ask_name:
+  - text: Can you please tell your name?
+  utter_assist_ask:
+  - buttons:
+    - payload: /flight_booking_enquiry[services=flight]
+      title: Flight Booking Enquiry
+    - payload: /webcheckin_guidelines
+      title: Web check-in Guidelines
+    - payload: /deny
+      title: Nothing
+    text: Hey, {name}. How may I help you?
+  utter_boarding:
+  - text: We'll help you to find the latest flight schedule. Please provide your origin airport location?
+  utter_ask_origin:
+  - text: We'll help you to find the latest flight schedule. Please provide your origin airport location?
+  utter_ask_destination:
+  - text: Please provide your destination airport location?
+  utter_ask_date:
+  - text: Please tell me the date of your journey?.
+  utter_close_conversation:
+  - text: Thanks for your feedback see you later.
+  utter_another_inquiry:
+  - text: Do you want to make another inquiry?
+  utter_confirm_inquiry:
+  - text: I will be making inquiry for flight from {from} to {to} on {date}. Is that correct?
+  utter_date:
+  - text: What is the date for your travel(in dd-mm-yyyy)?
+  utter_webcheckin_guidelines:
+  - text: It is mandatory that all passengers check-in online on our website or mobile app before they fly. You may do it online for free 48 hr to 60 min before the flight departure. If you need to opt for an airport check-in, you can get it done with a facilitation fee of ₹200 per passenger, effective 16th March, 2021. Boarding pass will be emailed only after successful declaration of health status. Remember to carry a printed copy of the boarding pass to the airport. You may alternatively print the same from the airport kiosk.
+  utter_thanks:
+  - text: Thanks for contacting us. Have a good day!
+  utter_details_overview:
+  - text: |
+      • {origin} • {destination} • {date}
+  utter_continue:
+  - buttons:
+    - payload: /affirm
+      title: Yes
+    - payload: /deny
+      title: No
+    text: Do you want to continue?
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am Sculpy, an AI powered assistant.
+  utter_name_slot:
+  - text: I will remember that your name is {name}.
+  utter_default:
+  - text: I'm confused, Core Threshold.Sorry I didn't get that. Can you rephrase?
+actions:
+- action_save_origin
+- action_save_destination
+- action_save_date
+- utter_greet
+- utter_webcheckin_guidelines
+- utter_boarding
+- utter_ask_origin
+- utter_ask_destination
+- utter_ask_date
+- utter_close_conversation
+- utter_another_inquiry
+- utter_confirm_inquiry
+- utter_date
+- utter_thanks
+- utter_details_overview
+- utter_slots_values
+forms:
+  name_form:
+    name:
+    - type: from_text
+  flight_details_form:
+    destination:
+    - type: from_text
+    origin:
+    - type: from_text
+    services:
+    - entity: services
+      type: from_entity
+e2e_actions: []
